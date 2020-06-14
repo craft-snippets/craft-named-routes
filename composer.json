@@ -1,0 +1,44 @@
+{
+    "name": "craftsnippets/craft-named-routes",
+    "description": "Craft named routes",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "craft named routes"
+    ],
+    "support": {
+        "docs": "https://github.com/craft-snippets/craft-named-routes/blob/master/README.md",
+        "issues": "https://github.com/craft-snippets/craft-named-routes/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Piotr Pogorzelski",
+            "homepage": "http://craftsnippets.com/"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "craftsnippets\\craftnamedroutes\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Craft named routes",
+        "handle": "craft-named-routes",
+        "developer": "Piotr Pogorzelski",
+        "developerUrl": "http://craftsnippets.com/",
+        "documentationUrl": "https://github.com/craft-snippets/craft-named-routes/blob/master/README.md",
+        "changelogUrl": "https://github.com/craft-snippets/craft-table-of-contents/blob/master/CHANGELOG.md",
+        "components": {
+            "craftNamedRoutesService": "craftsnippets\\craftnamedroutes\\services\\CraftNamedRoutesService"
+        },
+        "class": "craftsnippets\\craftnamedroutes\\CraftNamedRoutes"
+    }
+}
