@@ -29,7 +29,7 @@ In order to use the plugin, you will need to give your route an additional `name
 'users/<user_id:\d+>' => ['template' => 'pages/user', 'name' => 'userRoute'],
 ```
 
-As you can see, we gave route name `userRoute`. To get URL of route in Twig template, you need to use `craft.namedRoutes.getUrl` function:
+As you can see, we gave route name `userRoute`. To get URL of route in Twig template, you need to use `craft.namedRoutes.getUrl` function. Pass it route name and array or route tokens:
 
 ```
 {{craft.namedRoutes.getUrl('userRoute', {
@@ -43,7 +43,7 @@ Here are the parameters received by `craft.namedRoutes.getUrl` function:
 
 * route name
 * array of route tokens
-* optional parameter deciding if the token value should be checked by regexp rule, provided that such rule is provided within route token. Default: `true`.
+* optional parameter deciding if the token value should be checked by regexp rule, if such rule is provided within route token. Default: `true`.
 
 ## Regexp rules of tokens
 
