@@ -21,7 +21,7 @@ To install the plugin, follow these instructions.
 
 ## Usage
 
-This plugin allows you to get a URL of routes set in `config/routes.php` from within Twig templates. You will no longer need to hardcode routes structure in your templates.
+This plugin allows you to get a URL of routes set in `config/routes.php` from within Twig templates - you will no longer need to hardcode routes structure in your markup.
 
 In order to use the plugin, you will need to give your route an additional `name` attribute. Here is an example of a route that creates a user profile page:
 
