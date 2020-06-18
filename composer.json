@@ -1,14 +1,16 @@
 {
     "name": "craftsnippets/craft-named-routes",
-    "description": "Craft named routes",
+    "description": "Named routes plugin for CRaft CMS",
     "type": "craft-plugin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "keywords": [
         "craft",
         "cms",
         "craftcms",
         "craft-plugin",
-        "craft named routes"
+        "craft named routes",
+        "routing",
+        "routes"
     ],
     "support": {
         "docs": "https://github.com/craft-snippets/craft-named-routes/blob/master/README.md",
@@ -30,8 +32,8 @@
         }
     },
     "extra": {
-        "name": "Craft named routes",
-        "handle": "craft-named-routes",
+        "name": "Named routes",
+        "handle": "named-routes",
         "developer": "Piotr Pogorzelski",
         "developerUrl": "http://craftsnippets.com/",
         "documentationUrl": "https://github.com/craft-snippets/craft-named-routes/blob/master/README.md",
