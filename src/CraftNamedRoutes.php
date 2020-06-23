@@ -81,7 +81,7 @@ class CraftNamedRoutes extends Plugin
 
         Craft::info(
             Craft::t(
-                'craft-named-routes',
+                'named-routes',
                 '{name} plugin loaded',
                 ['name' => $this->name]
             ),
