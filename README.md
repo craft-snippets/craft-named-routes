@@ -42,7 +42,7 @@ This will output URL looking like "http://website.com/users/123".
 Here are the parameters received by `craft.namedRoutes.getUrl` function:
 
 * route name
-* array of route tokens
+* array of route tokens (optional - routes can have no tokens)
 * optional parameter deciding if the token value should be checked by regexp rule, if such rule is provided within route token. Default: `true`.
 
 ## Regexp rules of tokens

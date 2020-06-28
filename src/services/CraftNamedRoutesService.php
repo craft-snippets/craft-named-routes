@@ -31,7 +31,7 @@ class CraftNamedRoutesService extends Component
     /*
      * @return mixed
      */
-    public function returnRouteUrl(string $route_name, array $provided_tokens, $check_pattern = true)
+    public function returnRouteUrl(string $route_name, $provided_tokens, $check_pattern = true)
     {
 
         $keyword = 'name';
@@ -50,30 +50,37 @@ class CraftNamedRoutesService extends Component
             throw new RuntimeError(sprintf('Route "%s" was not found.', $route_name));
         }
 
-        //for each token in selected route
-        $selected_route_tokens = explode('/', $selected_route);
-        $result_segments = [];
-        foreach ($selected_route_tokens as $route_token) {
-            if(preg_match('/\<(\w+)\:?(.*)\>/', $route_token, $matches)){
-                $token_name = $matches[1];
+        
+        if(!is_null($provided_tokens) && is_array($provided_tokens)){
+        // if tokens provided
+            $selected_route_tokens = explode('/', $selected_route);
+            $result_segments = [];
+            //for each token in selected route
+            foreach ($selected_route_tokens as $route_token) {
+                if(preg_match('/\<(\w+)\:?(.*)\>/', $route_token, $matches)){
+                    $token_name = $matches[1];
 
-                // check if token exists with provided function param
-                if(!array_key_exists($token_name, $provided_tokens)){
-                    throw new RuntimeError(sprintf('Route "%s" - token with name "%s" does not have value provided.', $route_name, $token_name));
+                    // check if token exists with provided function param
+                    if(!array_key_exists($token_name, $provided_tokens)){
+                        throw new RuntimeError(sprintf('Route "%s" - token with name "%s" does not have value provided.', $route_name, $token_name));
+                    }
+
+                    // if token has regexp provided, check if token value validates
+                    if($check_pattern && !empty($matches[2]) && !preg_match('/^'.$matches[2].'$/', $provided_tokens[$token_name])){
+                        throw new RuntimeError(sprintf('Route "%s" - token with name "%s" does not match "%s" rule.', $route_name, $token_name, $matches[2]));
+                    }
+
+                    $result_segments[] = $provided_tokens[$token_name];
+                }else{
+                    $result_segments[] = $route_token;
                 }
-
-                // if token has regexp provided, check if token value validates
-                if($check_pattern && !empty($matches[2]) && !preg_match('/^'.$matches[2].'$/', $provided_tokens[$token_name])){
-                    throw new RuntimeError(sprintf('Route "%s" - token with name "%s" does not match "%s" rule.', $route_name, $token_name, $matches[2]));
-                }
-
-                $result_segments[] = $provided_tokens[$token_name];
-            }else{
-                $result_segments[] = $route_token;
             }
+            $result_url = implode('/', $result_segments);
+        }else{
+            $result_url = $selected_route;
         }
 
-        $result_url = implode('/', $result_segments);
+        
         $result_url = UrlHelper::url($result_url);
         return $result_url;
 
