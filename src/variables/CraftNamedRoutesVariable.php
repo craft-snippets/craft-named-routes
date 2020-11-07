@@ -25,7 +25,6 @@ class CraftNamedRoutesVariable
 
     public function getUrl(string $route_name, $provided_tokens = null, $check_pattern = true)
     {
-        $service = new CraftNamedRoutesServiceService;
-        return $service->returnRouteUrl($route_name, $provided_tokens, $check_pattern);
+        return CraftNamedRoutesServiceService::returnRouteUrl($route_name, $provided_tokens, $check_pattern);
     }
 }

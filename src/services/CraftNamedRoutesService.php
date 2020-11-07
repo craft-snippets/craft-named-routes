@@ -31,7 +31,7 @@ class CraftNamedRoutesService extends Component
     /*
      * @return mixed
      */
-    public function returnRouteUrl(string $route_name, $provided_tokens, $check_pattern = true)
+    public static function returnRouteUrl(string $route_name, $provided_tokens, $check_pattern = true)
     {
 
         $keyword = 'name';
