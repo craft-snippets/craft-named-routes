@@ -37,7 +37,7 @@ As you can see, we gave route name `userRoute`. To get URL of route in Twig temp
 }) }}
 ```
 
-This will output URL looking like "http://website.com/users/123".
+This will output URL looking like "http://website.com/users/11".
 
 Here are the parameters received by `craft.namedRoutes.getUrl` function:
 
