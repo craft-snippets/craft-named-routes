@@ -1,9 +1,6 @@
-# Named routes plugin for Craft CMS 3.x
+# Named routes plugin for Craft CMS 3.x and CMS 4.x
 
 
-## Requirements
-
-This plugin requires Craft CMS 3.0.0-beta.23 or later.
 
 ## Installation
 
