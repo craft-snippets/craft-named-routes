@@ -49,7 +49,7 @@ class CraftNamedRoutesService extends Component
             $manager = Craft::$app->getUrlManager();
             $rules = Craft::$app->getUrlManager()->rules;
             foreach ($rules as $rule) {
-                if(isset($rule->name) && $rule->name == $route_name){
+                if(isset($rule->$keyword) && $rule->$keyword == $route_name){
                     $selected_route = $rule->createUrl($manager, $rule->route, $provided_tokens);
                 }
             }
