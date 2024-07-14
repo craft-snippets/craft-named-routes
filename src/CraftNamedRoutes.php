@@ -76,7 +76,6 @@ class CraftNamedRoutes extends Plugin
                 /** @var CraftVariable $variable */
                 $variable = $event->sender;
                 $variable->set('namedRoutes', CraftNamedRoutesVariable::class);
-                $variable->set('routes', CraftNamedRoutesVariable::class);
             }
         );
 
