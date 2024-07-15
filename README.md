@@ -1,6 +1,4 @@
-# Named routes plugin for Craft CMS 3.x and CMS 4.x
-
-
+# Named routes plugin for Craft CMS 5.x
 
 ## Installation
 
@@ -70,10 +68,8 @@ Passing `{id}` as `entry_id` token value will cause an error, because string `{i
 
 More information about routes can be found in Craft [documentation](https://docs.craftcms.com/v3/routing.html#advanced-routing-with-url-rules).
 
------------------
-
-Plugin icon made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](https://www.flaticon.com/).
-
------------------
+## Disclaimer
 
 Brought to you by [Piotr Pogorzelski](http://craftsnippets.com/)
+
+Plugin icon made by [Law Xin Yi](https://iconscout.com/free-icon/road-sign-6496887).
