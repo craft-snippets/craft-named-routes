@@ -45,6 +45,16 @@ class CraftNamedRoutesService extends Component
             }
         }
 
+        if (is_null($selected_route = null)) {
+            $manager = Craft::$app->getUrlManager();
+            $rules = Craft::$app->getUrlManager()->rules;
+            foreach ($rules as $rule) {
+                if(isset($rule->$keyword) && $rule->$keyword == $route_name){
+                    $selected_route = $rule->createUrl($manager, $rule->route, $provided_tokens);
+                }
+            }
+        }
+
         // exception if no route with provided name was found
         if(is_null($selected_route)){
             throw new RuntimeError(sprintf('Route "%s" was not found.', $route_name));
