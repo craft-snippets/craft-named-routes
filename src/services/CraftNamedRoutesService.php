@@ -31,7 +31,7 @@ class CraftNamedRoutesService extends Component
     /*
      * @return mixed
      */
-    public static function returnRouteUrl(string $route_name, $provided_tokens, $check_pattern = true)
+    public static function returnRouteUri(string $route_name, $provided_tokens, $check_pattern = true)
     {
 
         $keyword = 'name';
@@ -50,7 +50,6 @@ class CraftNamedRoutesService extends Component
             throw new RuntimeError(sprintf('Route "%s" was not found.', $route_name));
         }
 
-        
         if(!is_null($provided_tokens) && is_array($provided_tokens)){
         // if tokens provided
             $selected_route_tokens = explode('/', $selected_route);
@@ -81,9 +80,16 @@ class CraftNamedRoutesService extends Component
         }
 
         
-        $result_url = UrlHelper::url($result_url);
+//        $result_url = UrlHelper::url($result_url);
         return $result_url;
 
+    }
+
+    public static function returnRouteUrl(string $route_name, $provided_tokens, $check_pattern = true)
+    {
+        $uri = self::returnRouteUri($route_name, $provided_tokens, $check_pattern);
+        $url = UrlHelper::url($uri);
+        return $url;
     }
 
 }

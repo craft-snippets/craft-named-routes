@@ -23,6 +23,11 @@ use craftsnippets\craftnamedroutes\services\CraftNamedRoutesService as CraftName
 class CraftNamedRoutesVariable
 {
 
+    public function getUri(string $route_name, $provided_tokens = null, $check_pattern = true)
+    {
+        return CraftNamedRoutesServiceService::returnRouteUri($route_name, $provided_tokens, $check_pattern);
+    }
+
     public function getUrl(string $route_name, $provided_tokens = null, $check_pattern = true)
     {
         return CraftNamedRoutesServiceService::returnRouteUrl($route_name, $provided_tokens, $check_pattern);

@@ -40,6 +40,16 @@ Here are the parameters received by `craft.namedRoutes.getUrl` function:
 * array of route tokens (optional - routes can have no tokens)
 * optional parameter deciding if the token value should be checked by regexp rule, if such rule is provided within route token. Default: `true`.
 
+You can also get *URI* instead or *URL* by using `getUri()` method:
+
+```
+{{craft.namedRoutes.getUri('userRoute', {
+	user_id: 11,
+}) }}
+```
+
+This will return URI "users/11".
+
 ## Regexp rules of tokens
 
 The last parameter of the function requires a bit of explanation. If route token has regexp rule provided (like `<user_id:\d+>` - which would only accept digits), the plugin by default will throw an exception if the provided token value does not match this rule. This behavior can be overwritten by setting the third parameter of the function to `false`. 
